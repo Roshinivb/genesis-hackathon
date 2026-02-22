@@ -20,8 +20,8 @@ const Navbar = () => {
 
                     {/* Logo Section */}
                     <a href="#home" className="flex items-center gap-2 group">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-gold-light to-brand-gold-dark flex items-center justify-center text-brand-black font-display font-bold text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)] group-hover:scale-105 transition-transform duration-300">
-                            R
+                        <div className="w-10 h-10 rounded-full border border-brand-gold/30 bg-white/5 backdrop-blur-md flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.3)] group-hover:scale-105 transition-transform duration-300 overflow-hidden relative">
+                            <img src="/rotaract_logo.png" alt="Rotaract Logo" className="w-[85%] h-[85%] object-contain absolute opacity-90 drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
                         </div>
                     </a>
 

@@ -34,8 +34,8 @@ const HeroSection = () => {
             <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full h-full">
 
                 {/* V2 Top Centered Logo Idea */}
-                <div className="mb-6 md:mb-10 w-16 h-16 md:w-20 md:h-20 rounded-full border border-brand-gold/30 bg-brand-black/50 backdrop-blur-md flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.3)]">
-                    <span className="text-brand-gold-light font-display font-bold text-2xl md:text-3xl">R</span>
+                <div className="mb-6 md:mb-10 w-24 h-24 md:w-32 md:h-32 rounded-full border border-brand-gold/30 bg-white/5 backdrop-blur-md flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.4)] overflow-hidden">
+                    <img src="/rotaract_logo.png" alt="Rotaract Club Logo" className="w-[85%] h-[85%] object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.6)]" />
                 </div>
 
                 {/* V2 Massive Display Typography */}

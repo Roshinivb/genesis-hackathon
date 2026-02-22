@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,69 +10,89 @@ const Navbar = () => {
         { name: 'About', href: '#about' },
         { name: 'Prizes', href: '#prizes' },
         { name: 'Schedule', href: '#schedule' },
-        { name: 'Register', href: '#register' },
-        { name: 'Problem Statements', href: '#problems' },
-        { name: 'FAQ', href: '#faq' },
+        { name: 'Problems', href: '#problems' },
     ];
 
     return (
-        <nav className="fixed w-full z-50 top-0 transition-all duration-300 bg-brand-black/90 backdrop-blur-md border-b border-brand-gold/20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+        <nav className="fixed w-full z-50 top-4 sm:top-8 pointer-events-none flex justify-center px-4">
+            <div className="relative pointer-events-auto bg-brand-black/40 backdrop-blur-2xl border border-white/10 rounded-full px-6 py-3 shadow-[0_8px_32px_0_rgba(212,175,55,0.05)]">
+                <div className="flex justify-between items-center gap-8 md:gap-16">
+
                     {/* Logo Section */}
-                    <div className="flex items-center gap-3">
-                        {/* Placeholder for Rotaract Logo */}
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-gold to-brand-gold-dark flex items-center justify-center text-brand-black font-bold text-xl">
+                    <a href="#home" className="flex items-center gap-2 group">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-gold-light to-brand-gold-dark flex items-center justify-center text-brand-black font-display font-bold text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)] group-hover:scale-105 transition-transform duration-300">
                             R
                         </div>
-                        <div className="hidden sm:block">
-                            <span className="text-brand-gold font-bold tracking-wider text-sm md:text-base">ROTARACT CLUB</span>
-                            <p className="text-xs text-gray-400">SRM Easwari Engineering College</p>
-                        </div>
-                    </div>
+                    </a>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-gray-300 hover:text-brand-gold transition-colors text-xs lg:text-sm uppercase tracking-wide font-medium"
+                                className="text-white/70 hover:text-brand-gold-light transition-all text-sm font-medium tracking-wide relative hover:-translate-y-0.5"
                             >
                                 {link.name}
                             </a>
                         ))}
+                    </div>
+
+                    {/* Extra CTA - Desktop */}
+                    <div className="hidden md:block">
+                        <a href="#register" className="px-5 py-2 rounded-full border border-brand-gold/30 text-brand-gold-light text-sm font-semibold hover:bg-brand-gold/10 transition-colors">
+                            Register
+                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-brand-gold hover:text-brand-gold-light focus:outline-none"
+                            className="text-brand-gold-light focus:outline-none hover:scale-110 transition-transform"
                         >
-                            {isOpen ? <X size={28} /> : <Menu size={28} />}
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden bg-brand-black/95 backdrop-blur-lg border-b border-brand-gold/20 absolute w-full">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg shadow-brand-gold/5">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                onClick={() => setIsOpen(false)}
-                                className="block px-3 py-4 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-white/5 rounded-md border-b border-white/5 last:border-0"
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            )}
+            {/* Mobile Menu Dropdown */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-20 right-4 w-64 pointer-events-auto"
+                    >
+                        <div className="bg-brand-black/80 backdrop-blur-3xl border border-brand-gold/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.1)]">
+                            <div className="flex flex-col py-2">
+                                {navLinks.map((link) => (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="px-6 py-4 text-sm font-medium text-white/80 hover:text-brand-gold-light hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors"
+                                    >
+                                        {link.name}
+                                    </a>
+                                ))}
+                                <div className="px-6 pt-4 pb-2">
+                                    <a
+                                        href="#register"
+                                        onClick={() => setIsOpen(false)}
+                                        className="block text-center px-4 py-3 rounded-full bg-gradient-to-r from-brand-gold to-brand-gold-dark text-black font-bold uppercase text-sm tracking-wider w-full shadow-[0_0_15px_rgba(212,175,55,0.3)]"
+                                    >
+                                        Register
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };

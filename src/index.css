@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-gold: #D4AF37;
+  --color-brand-gold-light: #FFD700;
+  --color-brand-gold-dark: #cc7700;
+  --color-brand-black: #050300;
+  --color-brand-gray: #1a1000;
+  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Racing Sans One', 'Russo One', 'Syncopate', sans-serif;
+}
+
+body {
+  background-color: var(--color-brand-black);
+  color: white;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+@utility box-glow {
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}

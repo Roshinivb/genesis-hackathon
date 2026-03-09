@@ -248,16 +248,7 @@ const getProps = (rel) => {
 };
 
 /* ─── Single Card ─── */
-const PrizeCard = ({ prize, relIdx, onClick }) => {
-    // Dynamic screen width check for mobile spacing
-    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 768);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
+const PrizeCard = ({ prize, relIdx, onClick, isMobile }) => {
     const p = getProps(relIdx);
     if (!p) return null;
     const isCenter = relIdx === 0;
@@ -415,6 +406,13 @@ const PrizeCard = ({ prize, relIdx, onClick }) => {
 /* ─── Main Section ─── */
 const PrizeSection = () => {
     const [active, setActive] = useState(0);
+    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const goNext = useCallback(() => setActive(p => (p + 1) % prizes.length), []);
     const goPrev = useCallback(() => setActive(p => (p - 1 + prizes.length) % prizes.length), []);
@@ -537,6 +535,7 @@ const PrizeSection = () => {
                             key={prize.id}
                             prize={prize}
                             relIdx={rel}
+                            isMobile={isMobile}
                             onClick={() => { if (rel !== 0) setActive(i); }}
                         />
                     );

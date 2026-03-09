@@ -11,89 +11,97 @@ const Navbar = () => {
         { name: 'Prizes', href: '#prizes' },
         { name: 'Schedule', href: '#schedule' },
         { name: 'Problems', href: '#problems' },
+        { name: 'Contact', href: '#contact' },
+        { name: 'Register', href: '#register' },
     ];
 
     return (
-        <nav className="fixed w-full z-50 top-4 sm:top-8 pointer-events-none flex justify-center px-4">
-            <div className="relative pointer-events-auto bg-brand-black/40 backdrop-blur-2xl border border-white/10 rounded-full px-6 py-3 shadow-[0_8px_32px_0_rgba(212,175,55,0.05)]">
-                <div className="flex justify-between items-center gap-8 md:gap-16">
+        <>
+            {/* Top Navigation Bar Component */}
+            <nav className="fixed w-full z-50 top-0 left-0 pointer-events-none flex justify-between items-start p-4 sm:p-6 md:p-8">
 
-                    {/* Logo Section */}
-                    <a href="#home" className="flex items-center gap-2 group">
-                        <div className="w-10 h-10 rounded-full border border-brand-gold/30 bg-white/5 backdrop-blur-md flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.3)] group-hover:scale-105 transition-transform duration-300 overflow-hidden relative">
-                            <img src="/rotaract_logo.png" alt="Rotaract Logo" className="w-[85%] h-[85%] object-contain absolute opacity-90 drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
-                        </div>
-                    </a>
-
-                    {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-white/70 hover:text-brand-gold-light transition-all text-sm font-medium tracking-wide relative hover:-translate-y-0.5"
-                            >
-                                {link.name}
-                            </a>
-                        ))}
+                {/* Aram Logo Section - Top Left */}
+                <a href="#home" className="pointer-events-auto flex items-center gap-3 group">
+                    <div className="w-20 h-20 sm:w-28 sm:h-28 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                        <img src="/aram_logo.png" alt="Aram Logo" className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.7)]" />
                     </div>
+                </a>
 
-                    {/* Extra CTA - Desktop */}
-                    <div className="hidden md:block">
-                        <a href="#register" className="px-5 py-2 rounded-full border border-brand-gold/30 text-brand-gold-light text-sm font-semibold hover:bg-brand-gold/10 transition-colors">
-                            Register
-                        </a>
-                    </div>
-
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="text-brand-gold-light focus:outline-none hover:scale-110 transition-transform"
-                        >
-                            {isOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
+                {/* Menu Button - Top Right */}
+                <div className="pointer-events-auto">
+                    <button
+                        onClick={() => setIsOpen(true)}
+                        className="bg-brand-black/70 backdrop-blur-xl border border-brand-gold/30 text-brand-gold-light p-3 sm:p-4 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.15)] focus:outline-none hover:scale-105 hover:bg-brand-gold/10 transition-all font-bold tracking-widest flex items-center gap-2"
+                    >
+                        <span className="hidden sm:inline uppercase text-sm mr-1">Menu</span>
+                        <Menu size={24} />
+                    </button>
                 </div>
-            </div>
+            </nav>
 
-            {/* Mobile Menu Dropdown */}
+            {/* Sidebar Drawer Container */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-20 right-4 w-64 pointer-events-auto"
-                    >
-                        <div className="bg-brand-black/80 backdrop-blur-3xl border border-brand-gold/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.1)]">
-                            <div className="flex flex-col py-2">
-                                {navLinks.map((link) => (
-                                    <a
+                    <>
+                        {/* Overlay backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsOpen(false)}
+                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
+                        />
+
+                        {/* Left Side menu drawer */}
+                        <motion.div
+                            initial={{ x: '-100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '-100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="fixed top-0 left-0 bottom-0 w-[80vw] sm:w-[350px] bg-[#0a0a0a] border-r border-brand-gold/20 z-[70] shadow-[30px_0_50px_rgba(0,0,0,0.8)] flex flex-col"
+                        >
+                            {/* Drawer Header */}
+                            <div className="flex justify-between items-center p-6 border-b border-white/5">
+                                <span className="text-brand-gold font-bold uppercase tracking-widest text-lg">Menu</span>
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-white/50 hover:text-brand-gold hover:rotate-90 transition-all p-2 bg-white/5 rounded-full"
+                                >
+                                    <X size={24} />
+                                </button>
+                            </div>
+
+                            {/* Navigation Links */}
+                            <div className="flex flex-col py-6 px-4 space-y-2 overflow-y-auto">
+                                {navLinks.map((link, i) => (
+                                    <motion.a
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: i * 0.1 + 0.1 }}
                                         key={link.name}
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className="px-6 py-4 text-sm font-medium text-white/80 hover:text-brand-gold-light hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors"
+                                        className={`group relative flex items-center px-6 py-4 rounded-xl hover:bg-white/5 transition-all text-left ${link.name === 'Register' ? 'mt-8 border border-brand-gold/30 bg-gradient-to-r from-brand-gold/10 to-transparent' : ''}`}
                                     >
-                                        {link.name}
-                                    </a>
+                                        <span className={`text-xl font-bold tracking-wide transition-colors ${link.name === 'Register' ? 'text-brand-gold uppercase' : 'text-white/80 group-hover:text-brand-gold-light'}`}>
+                                            {link.name}
+                                        </span>
+                                        {/* Golden indicator on hover */}
+                                        {link.name !== 'Register' && (
+                                            <div className="absolute left-0 w-1 h-0 bg-brand-gold rounded-r-md transition-all group-hover:h-3/4 duration-300 top-1/2 -translate-y-1/2" />
+                                        )}
+                                    </motion.a>
                                 ))}
-                                <div className="px-6 pt-4 pb-2">
-                                    <a
-                                        href="#register"
-                                        onClick={() => setIsOpen(false)}
-                                        className="block text-center px-4 py-3 rounded-full bg-gradient-to-r from-brand-gold to-brand-gold-dark text-black font-bold uppercase text-sm tracking-wider w-full shadow-[0_0_15px_rgba(212,175,55,0.3)]"
-                                    >
-                                        Register
-                                    </a>
-                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+
+                            <div className="mt-auto p-6 border-t border-white/5 flex flex-col items-center opacity-50">
+                                <div className="text-xs text-center text-white/40 mb-2">Powered by Antigravity AI</div>
+                            </div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 };
 

@@ -3,11 +3,9 @@
 @theme {
   --color-brand-gold: #D4AF37;
   --color-brand-gold-light: #FFD700;
-  /* Much more vibrant gold */
-  --color-brand-gold-dark: #cc8400;
-  /* Richer amber/gold */
-  --color-brand-black: #050505;
-  --color-brand-gray: #111111;
+  --color-brand-gold-dark: #cc7700;
+  --color-brand-black: #050300;
+  --color-brand-gray: #1a1000;
   --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Racing Sans One', 'Russo One', 'Syncopate', sans-serif;
 }
@@ -27,39 +25,12 @@ body {
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.2);
 }
 
-@utility text-3d-nxtgen {
-  /* Heavy 3D blocky stroke mimicking the esports/hacker style */
-  text-shadow:
-    3px 3px 0 #2a1a00,
-    6px 6px 0 #2a1a00,
-    9px 9px 0 #2a1a00,
-    12px 12px 0 #2a1a00,
-    15px 15px 0 #000,
-    0 0 30px rgba(255, 215, 0, 0.6);
-  -webkit-text-stroke: 2px #fff;
-}
-
-@keyframes wireframe-spin {
+@keyframes gradient-shift {
   0% {
-    transform: perspective(800px) rotateX(60deg) rotateZ(0deg);
+    background-position: 0% center;
   }
 
   100% {
-    transform: perspective(800px) rotateX(60deg) rotateZ(360deg);
+    background-position: 200% center;
   }
-}
-
-.wireframe-grid {
-  position: absolute;
-  width: 200vw;
-  height: 200vh;
-  top: -50vh;
-  left: -50vw;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(255, 215, 0, 0.3) 0px, rgba(255, 215, 0, 0.3) 2px, transparent 2px, transparent 60px),
-    repeating-linear-gradient(90deg, rgba(255, 215, 0, 0.3) 0px, rgba(255, 215, 0, 0.3) 2px, transparent 2px, transparent 60px);
-  background-size: 60px 60px;
-  animation: wireframe-spin 60s linear infinite;
-  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 70%);
-  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 70%);
 }

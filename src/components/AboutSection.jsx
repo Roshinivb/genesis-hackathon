@@ -6,35 +6,35 @@ const AboutSection = () => {
     const columns = [
         {
             icon: <Rocket className="w-8 h-8 text-brand-gold-light group-hover:text-brand-black transition-colors" />,
-            title: "Innovation Focus",
-            description: "Push the boundaries of technology. We are looking for out-of-the-box solutions to real-world problems. (Content to be added later)"
+            title: "Hackathon Overview",
+            description: "A 24 hour startup hackathon designed to simulate a real world venture creation journey. Participants will ideate, validate, build, and pitch startup solutions to real problems, evaluated by venture capital style judging criteria."
         },
         {
             icon: <Globe2 className="w-8 h-8 text-brand-gold-light group-hover:text-brand-black transition-colors" />,
-            title: "National Scale",
-            description: "Compete with top minds from across the country. GENESIS brings together the brightest developers and creators. (Content to be added later)"
+            title: "Judging Criteria",
+            description: "Problem & Idea Clarity (20 pts), Market & Business Model (20 pts), Execution Plan (15 pts), Technical Approach / Prototype (20 pts), Innovation & Impact (15 pts), Pitch & Communication (10 pts). Evaluated on innovation, scalability, and technical depth."
         },
         {
             icon: <Code2 className="w-8 h-8 text-brand-gold-light group-hover:text-brand-black transition-colors" />,
-            title: "24-Hour Sprint",
-            description: "A grueling but rewarding 24-hour coding marathon. Test your endurance, teamwork, and technical skills. (Content to be added later)"
+            title: "Stress Relief",
+            description: "GENESIS includes a 3-hour optional fun window. Watch a movie, attend the DJ session, or relax in activity zones with console gaming, carrom, table tennis, and board games."
         },
         {
             icon: <Cpu className="w-8 h-8 text-brand-gold-light group-hover:text-brand-black transition-colors" />,
-            title: "Next-Gen Tech",
-            description: "From AI/ML to Web3 and IoT, build projects using cutting-edge technologies that shape our future. (Content to be added later)"
+            title: "Rules & Registration",
+            description: "Fee: Rs.600 per Crew (exactly 3 hustlers). No refunds. Participants must not leave the venue without permission. Maintain discipline and follow event guidelines."
         }
     ];
 
     return (
-        <section id="about" className="relative py-32 bg-[#050505] min-h-screen flex items-center justify-center overflow-hidden">
+        <section id="about" className="relative py-32 bg-[#0d0800] min-h-screen flex items-center justify-center overflow-hidden">
 
-            {/* V2 Subtle Grid Background Layer */}
-            <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-50" />
+            {/* Warm gold dot grid */}
+            <div className="absolute inset-0 bg-[radial-gradient(rgba(255,200,0,0.09)_1.5px,transparent_1.5px)] bg-[size:28px_28px] pointer-events-none opacity-60" />
 
             {/* Ambient background glows */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold-dark/10 rounded-full blur-[150px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/15 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yellow-600/10 rounded-full blur-[150px] pointer-events-none" />
 
             <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
 

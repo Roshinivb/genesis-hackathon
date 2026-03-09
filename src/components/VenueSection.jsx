@@ -67,7 +67,7 @@ const VenueSection = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-5xl md:text-7xl font-display font-black text-white italic tracking-tighter uppercase">
+                    <h2 className="text-4xl md:text-7xl font-display font-black text-white italic tracking-tighter uppercase">
                         VENUE & LOCATION
                     </h2>
                 </motion.div>
@@ -83,7 +83,7 @@ const VenueSection = () => {
                         href={mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2rem] p-12 md:p-20 overflow-hidden transition-all duration-500 hover:border-brand-gold/50 hover:shadow-[0_0_80px_rgba(212,175,55,0.15)]"
+                        className="block relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-20 overflow-hidden transition-all duration-500 hover:border-brand-gold/50 hover:shadow-[0_0_80px_rgba(212,175,55,0.15)]"
                     >
                         {/* Status Bar */}
                         <div className="absolute top-8 left-8 md:top-12 md:left-12 flex items-center gap-3">
@@ -99,7 +99,7 @@ const VenueSection = () => {
 
                         {/* Venue Text */}
                         <div className="text-center mt-8 md:mt-0">
-                            <h3 className="text-4xl md:text-7xl font-display font-black text-white italic tracking-tighter uppercase leading-tight">
+                            <h3 className="text-3xl md:text-7xl font-display font-black text-white italic tracking-tighter uppercase leading-tight">
                                 SRM EASWARI <br className="hidden md:block" /> ENGINEERING COLLEGE
                             </h3>
                             <p className="mt-6 text-brand-gold/80 font-display font-bold tracking-[0.2em] text-lg uppercase">

@@ -521,10 +521,11 @@ const PrizeSection = () => {
                 style={{
                     position: 'relative',
                     width: '100%', maxWidth: 1100,
-                    height: 560,
+                    minHeight: isMobile ? 540 : 560,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     perspective: '1300px', perspectiveOrigin: '50% 50%',
                     zIndex: 10,
+                    margin: isMobile ? '20px 0' : '0',
                 }}
             >
                 {prizes.map((prize, i) => {

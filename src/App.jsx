@@ -155,7 +155,11 @@ function App() {
         <div style={{ width: '100%', height: 1, background: 'linear-gradient(90deg, transparent 0%, rgba(255,200,0,0.5) 30%, rgba(255,200,0,0.8) 50%, rgba(255,200,0,0.5) 70%, transparent 100%)', marginBottom: 64 }} />
 
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr repeat(3, auto) 1.4fr', gap: '48px 64px', flexWrap: 'wrap' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '48px 32px'
+          }}>
 
             {/* LEFT — Branding */}
             <div style={{ gridColumn: '1', minWidth: 200 }}>
@@ -253,7 +257,7 @@ function App() {
             justifyContent: 'space-between',
             alignItems: 'center',
             flexWrap: 'wrap',
-            gap: 12,
+            gap: '16px 32px',
           }}>
             <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: 13, margin: 0 }}>
               © {new Date().getFullYear()}&nbsp;

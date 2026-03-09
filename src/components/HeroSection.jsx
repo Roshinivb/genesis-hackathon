@@ -272,19 +272,21 @@ const HeroSection = () => {
                                 display: 'flex', alignItems: 'center',
                                 gap: 'clamp(8px, 2vw, 14px)',
                                 marginBottom: 20, zIndex: 11,
-                                maxWidth: '95vw'
+                                maxWidth: 'min(95vw, 600px)',
+                                flexWrap: 'nowrap'
                             }}
                         >
                             {/* Rotaract Logo Circle */}
                             <div style={{
-                                width: 'clamp(44px, 10vw, 56px)',
-                                height: 'clamp(44px, 10vw, 56px)',
+                                width: 'clamp(40px, 8vw, 56px)',
+                                height: 'clamp(40px, 8vw, 56px)',
                                 borderRadius: '50%',
                                 border: '1px solid rgba(255,215,0,0.3)',
                                 background: 'rgba(0,0,0,0.7)',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 boxShadow: '0 0 20px rgba(255,215,0,0.2)',
-                                overflow: 'hidden'
+                                overflow: 'hidden',
+                                flexShrink: 0
                             }}>
                                 <img src="/rotaract_logo.png" alt="Rotaract Logo" style={{ width: '85%', height: '85%', objectFit: 'contain' }} />
                             </div>
@@ -295,26 +297,33 @@ const HeroSection = () => {
                                 backdropFilter: 'blur(10px)',
                                 border: '1px solid rgba(255,255,255,0.06)',
                                 borderRadius: '16px',
-                                padding: 'clamp(8px, 2vw, 10px) clamp(16px, 4vw, 24px)',
+                                padding: 'clamp(6px, 1.5vw, 10px) clamp(12px, 3vw, 24px)',
                                 display: 'flex', flexDirection: 'column',
                                 textAlign: 'left',
                                 boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
-                                maxWidth: 'calc(100vw - 100px)'
+                                flexShrink: 1,
+                                minWidth: 0
                             }}>
                                 <span style={{
                                     color: '#ffffff',
                                     fontWeight: 800,
-                                    fontSize: 'clamp(0.9rem, 3.5vw, 1.2rem)',
+                                    fontSize: 'clamp(0.8rem, 3vw, 1.2rem)',
                                     textTransform: 'uppercase',
-                                    letterSpacing: '0.05em'
+                                    letterSpacing: '0.05em',
+                                    whiteSpace: 'nowrap',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis'
                                 }}>
                                     Rotaract Club
                                 </span>
                                 <span style={{
                                     color: 'rgba(255,255,255,0.7)',
-                                    fontSize: 'clamp(0.7rem, 2.5vw, 0.85rem)',
+                                    fontSize: 'clamp(0.65rem, 2.2vw, 0.85rem)',
                                     fontWeight: 500,
-                                    lineHeight: 1.2
+                                    lineHeight: 1.2,
+                                    whiteSpace: 'nowrap',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis'
                                 }}>
                                     of SRM EEC <span style={{ color: '#FFD700', marginLeft: 4, fontWeight: 700 }}>presents</span>
                                 </span>
@@ -334,7 +343,7 @@ const HeroSection = () => {
                                 style={{
                                     position: 'relative',
                                     margin: 0, padding: 0,
-                                    fontSize: 'clamp(5rem, 18vw, 18rem)',
+                                    fontSize: 'clamp(3.5rem, 15vw, 18rem)',
                                     fontFamily: '"Racing Sans One", "Russo One", "Syncopate", sans-serif',
                                     fontWeight: 900,
                                     textTransform: 'uppercase',
@@ -343,16 +352,16 @@ const HeroSection = () => {
                                     whiteSpace: 'nowrap',
                                     transform: 'skewX(-12deg)',
                                     color: '#ffffff',
-                                    WebkitTextStroke: '2px #ffffff',
+                                    WebkitTextStroke: '1px #ffffff',
                                     textShadow: [
-                                        '3px 3px 0 #2a1a00',
+                                        '2px 2px 0 #2a1a00',
+                                        '4px 4px 0 #2a1a00',
                                         '6px 6px 0 #2a1a00',
-                                        '9px 9px 0 #2a1a00',
-                                        '12px 12px 0 #1a0e00',
-                                        '15px 15px 0 #100900',
-                                        '18px 18px 0 #000000',
-                                        '0 0 40px rgba(255,200,0,0.55)',
-                                        '0 0 80px rgba(255,180,0,0.2)',
+                                        '8px 8px 0 #1a0e00',
+                                        '10px 10px 0 #100900',
+                                        '12px 12px 0 #000000',
+                                        '0 0 30px rgba(255,200,0,0.55)',
+                                        '0 0 60px rgba(255,180,0,0.2)',
                                     ].join(', '),
                                     zIndex: 2,
                                 }}
@@ -382,11 +391,11 @@ const HeroSection = () => {
                                 backdropFilter: 'blur(20px)',
                                 borderTop: '1px solid rgba(255,215,0,0.35)',
                                 borderBottom: '1px solid rgba(255,215,0,0.35)',
-                                padding: '18px 48px',
+                                padding: '14px 24px',
                                 transform: 'skewX(-10deg)',
                                 display: 'flex', flexDirection: 'column', alignItems: 'center',
                                 boxShadow: '0 0 60px rgba(255,200,0,0.1)',
-                                maxWidth: 700, width: '100%',
+                                maxWidth: '90vw', width: 'auto',
                             }}
                         >
                             <p style={{

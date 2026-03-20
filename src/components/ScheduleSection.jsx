@@ -18,31 +18,54 @@ const scheduleDataDay0 = [
 const scheduleDataDay1 = [
   {
     time: "08:00 AM",
-    title: "Inaugural",
-    description: "Kickoff and problem understanding"
+    title: "Participant Reporting & Registration",
+    description: "Welcome to GENESIS"
   },
   {
-    time: "02:00 PM",
-    title: "Round 1 Evaluation",
-    description: "First phase evaluation"
+    time: "08:30 AM",
+    title: "Hall Allocation & Seating",
+    description: "Get settled in your designated workspace"
+  },
+  {
+    time: "09:00 AM",
+    title: "Hackathon Begins",
+    description: "24 Hours Start"
+  },
+  {
+    time: "12:00 PM",
+    title: "Lunch Break",
+    description: "12:00 PM - 12:45 PM"
+  },
+  {
+    time: "01:00 PM",
+    title: "Round 1: Ideation & Execution Plan",
+    description: [
+      "Problem understanding",
+      "Solution design",
+      "Market & business model",
+      "Submission: Concept + Execution Framework"
+    ]
   },
   {
     time: "07:00 PM",
-    title: "Round 2 Evaluation",
-    description: "Second phase evaluation"
+    title: "Round 2: Build Phase Begins",
+    description: [
+      "Prototype / Webpage / Architecture Development",
+      "Refinement of solution"
+    ]
   }
 ];
 
 const scheduleDataDay2 = [
   {
-    time: "08:00 AM",
-    title: "Round 3 Evaluation",
-    description: "Final evaluation and prototype presentation"
+    time: "09:00 AM",
+    title: "Final Pitching Begins",
+    description: "Present your completed projects to the judges"
   },
   {
-    time: "10:00 AM",
-    title: "Results",
-    description: "Winner announcements and closing ceremony"
+    time: "11:30 AM",
+    title: "Validation & Closing Ceremony",
+    description: "Results announcement and final wrap-up"
   }
 ];
 
@@ -121,7 +144,7 @@ const ScheduleSection = () => {
                   className="relative flex items-center pl-24 md:pl-32"
                 >
                   {/* Glow Node */}
-                  <div className="absolute left-[32px] md:left-[47px] w-4 h-4 md:w-5 md:h-5 rounded-full bg-gradient-to-br from-yellow-200 to-brand-gold shadow-[0_0_15px_#d4af37] z-10 border border-yellow-200"></div>
+                  <div className="absolute left-[33px] md:left-[47px] w-4 h-4 md:w-5 md:h-5 rounded-full bg-gradient-to-br from-yellow-200 to-brand-gold shadow-[0_0_15px_#d4af37] z-10 border border-yellow-200"></div>
 
                   <div>
                     <h4 className="text-xl md:text-2xl font-bold mb-1">
@@ -140,7 +163,7 @@ const ScheduleSection = () => {
 
           {/* Day 1 Separator */}
           <div className="relative flex items-center mt-10 mb-10 pl-24 md:pl-32">
-            <div className="absolute left-[36px] md:left-[52px] w-3 h-3 rounded-full bg-brand-gold shadow-[0_0_10px_#d4af37] z-10"></div>
+            <div className="absolute left-[35px] md:left-[51px] w-3 h-3 rounded-full bg-brand-gold shadow-[0_0_10px_#d4af37] z-10"></div>
 
             <div className="flex items-center gap-4 w-full">
               <h3 className="text-xl md:text-2xl font-bold text-brand-gold shrink-0">Day 1 - April 11, 2026</h3>
@@ -177,7 +200,7 @@ const ScheduleSection = () => {
 
           {/* Day 2 Separator */}
           <div className="relative flex items-center mt-10 mb-10 pl-24 md:pl-32">
-            <div className="absolute left-[36px] md:left-[52px] w-3 h-3 rounded-full bg-brand-gold shadow-[0_0_10px_#d4af37] z-10"></div>
+            <div className="absolute left-[35px] md:left-[51px] w-3 h-3 rounded-full bg-brand-gold shadow-[0_0_10px_#d4af37] z-10"></div>
 
             <div className="flex items-center gap-4 w-full">
               <h3 className="text-xl md:text-2xl font-bold text-brand-gold shrink-0">Day 2 - April 12, 2026</h3>

@@ -4,32 +4,32 @@ import { Clock, Flower } from 'lucide-react'; // Flower as the lotus icon at bot
 
 const scheduleDataDay1 = [
   {
-    time: "09:00",
-    title: "Inaugural Function",
-    description: "Problem understanding, Solution concept"
+    time: "08:00 AM",
+    title: "Inaugural",
+    description: "Kickoff and problem understanding"
   },
   {
-    time: "10:00",
-    title: "PPT Submission for Round 1",
-    description: "Submit presentations until 1 PM"
+    time: "02:00 PM",
+    title: "Round 1 Evaluation",
+    description: "First phase evaluation"
   },
   {
-    time: "02:00",
-    title: "Elimination Shortlist Announced",
-    description: "Results announced after review"
+    time: "07:00 PM",
+    title: "Round 2 Evaluation",
+    description: "Second phase evaluation"
   }
 ];
 
 const scheduleDataDay2 = [
   {
-    time: "09:00 AM",
-    title: "Round 2 Submission",
-    description: "Prototype presentation"
+    time: "08:00 AM",
+    title: "Round 3 Evaluation",
+    description: "Final evaluation and prototype presentation"
   },
   {
-    time: "11:00 AM",
-    title: "Round 3 Presentation",
-    description: "Live pitch and Q&A in front of judges."
+    time: "10:00 AM",
+    title: "Results",
+    description: "Winner announcements and closing ceremony"
   }
 ];
 

@@ -83,7 +83,7 @@ const ScheduleSection = () => {
 
               {/* Day 1 Pill inside Top Line */}
               <div className="relative ml-[-10px] md:ml-[-20px] top-1 flex-1 h-16 md:h-20 border-2 border-brand-gold rounded-r-full flex items-center shadow-[0_0_15px_rgba(212,175,55,0.4)] backdrop-blur-sm pl-12 md:pl-24 bg-gradient-to-r from-black via-black/50 to-transparent overflow-hidden">
-                <h3 className="text-sm md:text-2xl font-bold text-brand-gold mb-1 whitespace-nowrap">Day 1 - April 10, 2026</h3>
+                <h3 className="text-sm md:text-2xl font-bold text-brand-gold mb-1 whitespace-nowrap">Day 1 - April 11, 2026</h3>
 
                 {/* Internal Horizontal line - Hidden on small mobile to avoid overflow */}
                 <div className="hidden sm:flex absolute right-6 top-1/2 -translate-y-1/2 left-[250px] md:left-[300px] h-1 bg-brand-gold/80 rounded-full items-center shadow-[0_0_10px_#d4af37]">
@@ -130,7 +130,7 @@ const ScheduleSection = () => {
             <div className="absolute left-[36px] md:left-[52px] w-3 h-3 rounded-full bg-brand-gold shadow-[0_0_10px_#d4af37] z-10"></div>
 
             <div className="flex items-center gap-4 w-full">
-              <h3 className="text-xl md:text-2xl font-bold text-brand-gold shrink-0">Day 2 - April 11, 2026</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-brand-gold shrink-0">Day 2 - April 12, 2026</h3>
               <div className="h-px border-t-2 border-dashed border-brand-gold/50 flex-1"></div>
             </div>
           </div>

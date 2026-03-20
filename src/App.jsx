@@ -6,6 +6,8 @@ import ScheduleSection from './components/ScheduleSection';
 import ProblemSection from './components/ProblemSection';
 import PrizeSection from './components/PrizeSection';
 import ContactSection from './components/ContactSection';
+import pptTemplate from './assets/Genesis ppt template.pdf';
+
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -107,9 +109,36 @@ function App() {
                 Innovate?
               </span>
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: 36, lineHeight: 1.7, fontSize: 15 }}>
+            <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: 24, lineHeight: 1.7, fontSize: 15 }}>
               Join the 24-hour startup hackathon. Build, pitch, and win.
             </p>
+            <div style={{ marginBottom: 32 }}>
+              <a
+                href={pptTemplate}
+                download="Genesis_PPT_Template.pdf"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 24px',
+                  background: 'rgba(255,215,0,0.1)',
+                  border: '1px solid rgba(255,215,0,0.3)',
+                  color: '#FFD700',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  borderRadius: 4,
+                  transition: 'all 0.3s',
+                  fontFamily: 'Outfit, Inter, sans-serif',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,215,0,0.2)'; e.currentTarget.style.borderColor = '#FFD700'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,215,0,0.1)'; e.currentTarget.style.borderColor = 'rgba(255,215,0,0.3)'; }}
+              >
+                <span style={{ fontSize: '1.2rem' }}>📄</span> Download PPT Template
+              </a>
+            </div>
             <a
               href="https://forms.gle/xzuetkjHd36yqk1UA"
               target="_blank"

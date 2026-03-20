@@ -426,7 +426,7 @@ const HeroSection = () => {
                                 margin: 0,
                                 fontFamily: 'Outfit, Inter, sans-serif',
                             }}>
-                                4th &amp; 5th April 2026
+                                11th &amp; 12th April 2026
                             </p>
                         </motion.div>
 

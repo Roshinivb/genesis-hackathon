@@ -63,7 +63,7 @@ const ProblemSection = () => {
                 >
                     <h2 className="text-sm font-display font-bold tracking-[0.3em] text-brand-gold-light uppercase mb-4">The Challenge</h2>
                     <h3 className="text-4xl md:text-5xl font-display font-black text-white uppercase tracking-tighter">
-                        Problem <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark">Statements</span>
+                        <span className="pr-1 inline-block">Problem</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-light via-brand-gold to-brand-gold-dark pr-2 inline-block">Statements</span>
                     </h3>
                     <div className="mt-6 w-24 h-1 bg-brand-gold mx-auto rounded-full" />
                 </motion.div>

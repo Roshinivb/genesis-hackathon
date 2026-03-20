@@ -50,8 +50,8 @@ const footerCols = [
     contacts: [
       {
         icon: '✉',
-        label: 'rotaracteec2526@gmail.com',
-        href: 'mailto:rotaracteec2526@gmail.com',
+        label: 'aram2026genesis@gmail.com',
+        href: 'mailto:aram2026genesis@gmail.com',
       },
       {
         icon: '📷',
@@ -222,7 +222,7 @@ function App() {
                 >
                   📷
                 </a>
-                <a href="mailto:rotaracteec2526@gmail.com"
+                <a href="mailto:aram2026genesis@gmail.com"
                   style={{ width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(255,200,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,200,0,0.7)', textDecoration: 'none', fontSize: 16, transition: 'all 0.25s' }}
                   onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,200,0,0.12)'; e.currentTarget.style.borderColor = '#FFD700'; }}
                   onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(255,200,0,0.3)'; }}

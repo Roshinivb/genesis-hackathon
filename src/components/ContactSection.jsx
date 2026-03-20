@@ -66,7 +66,7 @@ const ContactSection = () => {
                 </svg>
             ),
             label: 'CALL US',
-            detail: 'Srini: 9363672714 | Roshini: 8300266050 | Syed: 9342410702',
+            detail: 'Srinivasan: 9363672714 | Roshini: 8300266050 | Syed Rumman: 93424 10702',
             handle: 'Call Organisers',
             handleLink: 'tel:+919363672714',
             metric: 'Fast',

@@ -1,8 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Shield, Baby, Trees, Search, Brain, Zap, HardHat } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Shield, Baby, Trees, Search, Brain, Zap, HardHat, X } from 'lucide-react';
 
 const ProblemSection = () => {
+    const [selectedProblem, setSelectedProblem] = useState(null);
+
     const problems = [
         {
             id: 1,
@@ -76,25 +78,27 @@ const ProblemSection = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                            className="bg-white/[0.03] border border-white/10 p-8 rounded-2xl hover:border-brand-gold/50 transition-all group relative overflow-hidden"
+                            whileHover={{ y: -5 }}
+                            onClick={() => setSelectedProblem(problem)}
+                            className="bg-white/[0.03] border border-white/10 p-8 rounded-2xl hover:border-brand-gold/50 cursor-pointer transition-all group relative overflow-hidden flex flex-col items-center text-center h-full min-h-[220px]"
                         >
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                                 {problem.icon}
                             </div>
 
-                            <div className="mb-6 inline-block p-3 rounded-lg bg-brand-gold/10 border border-brand-gold/20 text-brand-gold">
+                            <div className="mb-6 inline-block p-4 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold group-hover:scale-110 transition-transform duration-300">
                                 {problem.icon}
                             </div>
 
-                            <h4 className="text-xl font-bold text-white mb-4 group-hover:text-brand-gold transition-colors">
+                            <h4 className="text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">
                                 {problem.title}
                             </h4>
-                            <p className="text-gray-400 text-sm leading-relaxed">
-                                {problem.description}
+                            
+                            <p className="text-brand-gold/60 text-xs uppercase tracking-widest mt-auto pt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                Click to view details
                             </p>
 
-                            <div className="mt-8 h-1 w-0 bg-brand-gold group-hover:w-full transition-all duration-500 rounded-full" />
+                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-brand-gold group-hover:w-full transition-all duration-500" />
                         </motion.div>
                     ))}
                 </div>
@@ -106,28 +110,74 @@ const ProblemSection = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        whileHover={{ y: -10 }}
-                        className="w-full md:w-1/2 lg:w-1/3 bg-white/[0.03] border border-brand-gold/30 p-8 rounded-2xl hover:border-brand-gold/50 transition-all group relative overflow-hidden"
+                        whileHover={{ y: -5 }}
+                        onClick={() => setSelectedProblem(problems[6])}
+                        className="w-full md:w-1/2 lg:w-1/3 bg-white/[0.03] border border-brand-gold/30 p-8 rounded-2xl hover:border-brand-gold/50 cursor-pointer transition-all group relative overflow-hidden flex flex-col items-center text-center min-h-[220px]"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             {problems[6].icon}
                         </div>
 
-                        <div className="mb-6 inline-block p-3 rounded-lg bg-brand-gold/10 border border-brand-gold/20 text-brand-gold animate-pulse">
+                        <div className="mb-6 inline-block p-4 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold animate-pulse group-hover:scale-110 transition-transform duration-300">
                             {problems[6].icon}
                         </div>
 
-                        <h4 className="text-xl font-bold text-white mb-4 group-hover:text-brand-gold transition-colors">
+                        <h4 className="text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">
                             {problems[6].title}
                         </h4>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                            {problems[6].description}
+                        
+                        <p className="text-brand-gold/60 text-xs uppercase tracking-widest mt-auto pt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            Click to view details
                         </p>
 
-                        <div className="mt-8 h-1 w-full bg-brand-gold/20 group-hover:bg-brand-gold transition-all duration-500 rounded-full" />
+                        <div className="absolute bottom-0 left-0 h-1 w-full bg-brand-gold/20 group-hover:bg-brand-gold transition-all duration-500" />
                     </motion.div>
                 </div>
             </div>
+
+            {/* Popup Modal */}
+            <AnimatePresence>
+                {selectedProblem && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedProblem(null)}
+                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="bg-brand-black border border-brand-gold/30 p-8 md:p-12 rounded-3xl max-w-2xl w-full relative overflow-hidden shadow-[0_0_50px_rgba(255,200,0,0.15)]"
+                        >
+                            <div className="absolute -top-32 -right-32 w-80 h-80 bg-brand-gold/10 blur-[80px] rounded-full pointer-events-none" />
+                            
+                            <button 
+                                onClick={() => setSelectedProblem(null)}
+                                className="absolute top-6 right-6 text-gray-500 hover:text-white bg-white/5 hover:bg-white/10 p-2 rounded-full transition-all"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            <div className="mb-6 inline-block p-4 rounded-2xl bg-brand-gold/10 border border-brand-gold/20 text-brand-gold">
+                                {selectedProblem.icon}
+                            </div>
+                            
+                            <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-6 pr-8 leading-tight">
+                                {selectedProblem.title}
+                            </h3>
+                            
+                            <p className="text-gray-300 text-lg leading-relaxed font-mono">
+                                {selectedProblem.description}
+                            </p>
+                            
+                            <div className="mt-10 h-1 w-16 bg-gradient-to-r from-brand-gold to-transparent rounded-full" />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };

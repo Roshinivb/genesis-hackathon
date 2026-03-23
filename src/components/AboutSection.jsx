@@ -22,7 +22,7 @@ const AboutSection = () => {
         {
             icon: <Cpu className="w-8 h-8 text-brand-gold-light group-hover:text-brand-black transition-colors" />,
             title: "Rules & Registration",
-            description: "Fee: Rs.600 per Crew (exactly 3 hustlers). No refunds. Participants must not leave the venue without permission. Maintain discipline and follow event guidelines."
+            description: "Fee: Rs.600 per Crew (2-4 members). No refunds. Participants must not leave the venue without permission. Maintain discipline and follow event guidelines."
         }
     ];
 

@@ -56,7 +56,7 @@ const prizes = [
         id: 0,
         trophyEl: <TrophyGold size={90} color="#FF6347" glowColor="rgba(255,99,71,0.8)" />,
         label: 'GRAND REWARD',
-        amount: '₹17k + VC Pitch',
+        amount: '₹17k',
         sub: 'Total Prize Pool & Investor Access',
         tag: 'CHAMPION',
         perks: [

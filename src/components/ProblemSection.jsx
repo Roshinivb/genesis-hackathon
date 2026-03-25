@@ -77,7 +77,7 @@ const ProblemSection = () => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {problems.slice(0, problems.length - 1).map((problem, index) => (
+                    {problems.slice(0, 6).map((problem, index) => (
                         <motion.div
                             key={problem.id}
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -109,35 +109,38 @@ const ProblemSection = () => {
                     ))}
                 </div>
 
-                {/* Last item alone, centered in the last row */}
-                <div className="mt-8 flex justify-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        whileHover={{ y: -5 }}
-                        onClick={() => setSelectedProblem(problems[problems.length - 1])}
-                        className="w-full md:w-1/2 lg:w-1/3 bg-white/[0.03] border border-brand-gold/30 p-8 rounded-2xl hover:border-brand-gold/50 cursor-pointer transition-all group relative overflow-hidden flex flex-col items-center text-center min-h-[220px]"
-                    >
-                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            {problems[problems.length - 1].icon}
-                        </div>
+                {/* Last items centered in the last row */}
+                <div className="mt-8 flex flex-col md:flex-row justify-center gap-8">
+                    {problems.slice(6).map((problem, index) => (
+                        <motion.div
+                            key={problem.id}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 + (index * 0.1) }}
+                            whileHover={{ y: -5 }}
+                            onClick={() => setSelectedProblem(problem)}
+                            className={`w-full md:w-1/2 lg:w-1/3 bg-white/[0.03] border ${problem.id === 8 ? 'border-brand-gold/30' : 'border-white/10'} p-8 rounded-2xl hover:border-brand-gold/50 cursor-pointer transition-all group relative overflow-hidden flex flex-col items-center text-center min-h-[220px]`}
+                        >
+                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                {problem.icon}
+                            </div>
 
-                        <div className="mb-6 inline-block p-4 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold animate-pulse group-hover:scale-110 transition-transform duration-300">
-                            {problems[problems.length - 1].icon}
-                        </div>
+                            <div className={`mb-6 inline-block p-4 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold ${problem.id === 8 ? 'animate-pulse' : ''} group-hover:scale-110 transition-transform duration-300`}>
+                                {problem.icon}
+                            </div>
 
-                        <h4 className="text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">
-                            {problems[problems.length - 1].title}
-                        </h4>
-                        
-                        <p className="text-brand-gold/60 text-xs uppercase tracking-widest mt-auto pt-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                            Click to view details
-                        </p>
+                            <h4 className="text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">
+                                {problem.title}
+                            </h4>
+                            
+                            <p className="text-brand-gold/60 text-xs uppercase tracking-widest mt-auto pt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                Click to view details
+                            </p>
 
-                        <div className="absolute bottom-0 left-0 h-1 w-full bg-brand-gold/20 group-hover:bg-brand-gold transition-all duration-500" />
-                    </motion.div>
+                            <div className={`absolute bottom-0 left-0 h-1 transition-all duration-500 ${problem.id === 8 ? 'w-full bg-brand-gold/20 group-hover:bg-brand-gold' : 'w-0 bg-brand-gold group-hover:w-full'}`} />
+                        </motion.div>
+                    ))}
                 </div>
             </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Baby, Trees, Search, Brain, Zap, HardHat, X } from 'lucide-react';
+import { Shield, Baby, Trees, Search, Brain, Zap, HardHat, Activity, X } from 'lucide-react';
 
 const ProblemSection = () => {
     const [selectedProblem, setSelectedProblem] = useState(null);
@@ -44,6 +44,12 @@ const ProblemSection = () => {
         },
         {
             id: 7,
+            title: "Hospital Load Balancer (Pure Software Version)",
+            description: "Develop a software-based load balancing system to distribute patient inflow, optimize ward occupancies, and manage emergency room queues effectively across multiple hospitals or within a single large facility.",
+            icon: <Activity className="w-8 h-8 text-brand-gold" />
+        },
+        {
+            id: 8,
             title: "Open Innovation Track",
             description: "Participants may propose their own original startup idea addressing any real-world problem, provided it demonstrates clear customer need, a viable business model, scalability, and a supporting technical approach.",
             icon: <Search className="w-8 h-8 text-brand-gold" />
@@ -71,7 +77,7 @@ const ProblemSection = () => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {problems.slice(0, 6).map((problem, index) => (
+                    {problems.slice(0, problems.length - 1).map((problem, index) => (
                         <motion.div
                             key={problem.id}
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -103,7 +109,7 @@ const ProblemSection = () => {
                     ))}
                 </div>
 
-                {/* 7th item alone, centered in the last row */}
+                {/* Last item alone, centered in the last row */}
                 <div className="mt-8 flex justify-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -111,19 +117,19 @@ const ProblemSection = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                         whileHover={{ y: -5 }}
-                        onClick={() => setSelectedProblem(problems[6])}
+                        onClick={() => setSelectedProblem(problems[problems.length - 1])}
                         className="w-full md:w-1/2 lg:w-1/3 bg-white/[0.03] border border-brand-gold/30 p-8 rounded-2xl hover:border-brand-gold/50 cursor-pointer transition-all group relative overflow-hidden flex flex-col items-center text-center min-h-[220px]"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            {problems[6].icon}
+                            {problems[problems.length - 1].icon}
                         </div>
 
                         <div className="mb-6 inline-block p-4 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold animate-pulse group-hover:scale-110 transition-transform duration-300">
-                            {problems[6].icon}
+                            {problems[problems.length - 1].icon}
                         </div>
 
                         <h4 className="text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">
-                            {problems[6].title}
+                            {problems[problems.length - 1].title}
                         </h4>
                         
                         <p className="text-brand-gold/60 text-xs uppercase tracking-widest mt-auto pt-6 opacity-0 group-hover:opacity-100 transition-opacity">

@@ -144,10 +144,11 @@ const ContactSection = () => {
                     <div style={{ width: 80, height: 2, background: 'linear-gradient(90deg, transparent, #FFD700, transparent)', margin: '16px auto 0' }} />
                 </motion.div>
 
-                {/* 3 Cards */}
+                {/* Contact Cards */}
                 <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
                     gap: 24,
                 }}>
                     {cards.map((card, i) => (
@@ -157,6 +158,7 @@ const ContactSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: i * 0.15 }}
+                            style={{ flex: '1 1 300px', maxWidth: 350, width: '100%' }}
                         >
                             <div style={{
                                 background: 'rgba(255,255,255,0.03)',

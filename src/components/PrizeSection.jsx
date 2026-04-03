@@ -56,11 +56,11 @@ const prizes = [
         id: 0,
         trophyEl: <TrophyGold size={90} color="#FF6347" glowColor="rgba(255,99,71,0.8)" />,
         label: 'GRAND REWARD',
-        amount: '₹15L',
+        amount: '₹16L',
         sub: 'Investment for Top 6 Teams',
         tag: 'CHAMPION',
         perks: [
-            '₹15L Investment Pool for Top 6 Teams',
+            '₹16L Investment Pool for Top 6 Teams',
             'First Prize — ₹10,000',
             'Second Prize — ₹7,000',
             'VC Pitch Opportunity & Investor Access',
@@ -160,7 +160,7 @@ const prizes = [
         sub: 'Investor Demo Day',
         tag: 'EXCLUSIVE',
         perks: [
-            '₹15L Investment Pool for Top 6 Teams',
+            '₹16L Investment Pool for Top 6 Teams',
             'Invited VCs evaluate projects',
             'Network with top investors',
             'Pitch to industry leaders',

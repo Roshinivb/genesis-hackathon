@@ -17,53 +17,49 @@ const scheduleDataDay0 = [
 
 const scheduleDataDay1 = [
   {
-    time: "08:00 AM",
+    time: "02:00 PM",
     title: "Participant Reporting & Registration",
     description: "Welcome to GENESIS"
   },
   {
-    time: "08:30 AM",
-    title: "Hall Allocation & Seating",
-    description: "Get settled in your designated workspace"
+    time: "03:00 PM",
+    title: "Inauguration Ceremony",
+    description: "Official kickoff and opening remarks"
   },
   {
-    time: "09:00 AM",
+    time: "05:00 PM",
     title: "Hackathon Begins",
     description: "24 Hours Start"
   },
   {
-    time: "12:00 PM",
-    title: "Lunch Break",
-    description: "12:00 PM - 12:45 PM"
-  },
-  {
-    time: "01:00 PM",
+    time: "07:00 PM",
     title: "Round 1: Ideation & Execution Plan",
     description: [
       "Problem understanding",
       "Solution design",
       "Market & business model",
-      "Submission: Concept + Execution Framework"
-    ]
-  },
-  {
-    time: "07:00 PM",
-    title: "Round 2: Build Phase Begins",
-    description: [
-      "Prototype / Webpage / Architecture Development",
-      "Refinement of solution"
+      "Submission: Concept + Execution Framework",
+      "Present with PPT"
     ]
   }
 ];
 
 const scheduleDataDay2 = [
   {
-    time: "09:00 AM",
-    title: "Final Pitching Begins",
+    time: "06:00 AM",
+    title: "Round 2: Build Phase",
+    description: [
+      "Prototype / Webpage / Architecture Development",
+      "Refinement of solution"
+    ]
+  },
+  {
+    time: "10:00 AM",
+    title: "Round 3: Final Pitching",
     description: "Present your completed projects to the judges"
   },
   {
-    time: "11:30 AM",
+    time: "05:00 PM",
     title: "Validation & Closing Ceremony",
     description: "Results announcement and final wrap-up"
   }

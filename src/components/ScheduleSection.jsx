@@ -17,12 +17,12 @@ const scheduleDataDay0 = [
 
 const scheduleDataDay1 = [
   {
-    time: "02:00 PM",
+    time: "03:00 PM",
     title: "Participant Reporting & Registration",
     description: "Welcome to GENESIS"
   },
   {
-    time: "03:00 PM",
+    time: "04:30 PM",
     title: "Inauguration Ceremony",
     description: "Official kickoff and opening remarks"
   },
@@ -32,7 +32,7 @@ const scheduleDataDay1 = [
     description: "24 Hours Start"
   },
   {
-    time: "07:00 PM",
+    time: "07:30 PM",
     title: "Round 1: Ideation & Execution Plan",
     description: [
       "Problem understanding",
@@ -46,20 +46,21 @@ const scheduleDataDay1 = [
 
 const scheduleDataDay2 = [
   {
-    time: "06:00 AM",
+    time: "02:00 AM",
     title: "Round 2: Build Phase",
     description: [
-      "Prototype / Webpage / Architecture Development",
+      "Complete solution for the problem statement (PPT)",
+      "Basic prototype / working model",
       "Refinement of solution"
     ]
   },
   {
-    time: "10:00 AM",
+    time: "11:00 AM",
     title: "Round 3: Final Pitching",
     description: "Present your completed projects to the judges"
   },
   {
-    time: "05:00 PM",
+    time: "01:00 PM",
     title: "Validation & Closing Ceremony",
     description: "Results announcement and final wrap-up"
   }

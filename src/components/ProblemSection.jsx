@@ -35,12 +35,7 @@ const ProblemSection = () => {
             title: "Affordable Child Safety Wearable for Schools",
             description: "Parents lack real-time awareness of child safety beyond school premises. The task is to design a wearable solution balancing safety, privacy, and cost.",
             icon: <Baby className="w-8 h-8 text-brand-gold" />
-        },
-        {
-            id: 6,
-            title: "AI-Enabled Child Safety Wearable with Predictive Risk Alerts",
-            description: "Parents lack proactive alerts about potential risks to children beyond school premises. The challenge is to design a wearable that uses data to predict unsafe situations while ensuring data privacy.",
-            icon: <Zap className="w-8 h-8 text-brand-gold" />
+
         },
         {
             id: 7,

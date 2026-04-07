@@ -2,34 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, Flower } from 'lucide-react'; // Flower as the lotus icon at bottom
 
-const scheduleDataDay0 = [
-  {
-    time: "Online Session",
-    title: "Pre-Event Briefing & Guidelines",
-    description: [
-      "Introduction to GENESIS",
-      "Explanation of problem statements",
-      "Rules, evaluation criteria & submission formats",
-      "Doubt clarification session"
-    ]
-  }
-];
-
 const scheduleDataDay1 = [
   {
-    time: "03:00 PM",
+    time: "04:00 PM",
     title: "Participant Reporting & Registration",
     description: "Welcome to GENESIS"
   },
   {
-    time: "04:30 PM",
-    title: "Inauguration Ceremony",
-    description: "Official kickoff and opening remarks"
-  },
-  {
     time: "05:00 PM",
     title: "Hackathon Begins",
-    description: "24 Hours Start"
+    description: "20 Hours Start"
   },
   {
     time: "07:30 PM",
@@ -114,9 +96,9 @@ const ScheduleSection = () => {
                 <div className="absolute top-10 -right-2 w-2 h-2 bg-brand-gold rounded-full blur-[2px] animate-pulse delay-75"></div>
               </div>
 
-              {/* Day 0 Pill inside Top Line */}
+              {/* Day 1 Pill inside Top Line */}
               <div className="relative ml-[-10px] md:ml-[-20px] top-1 flex-1 h-16 md:h-20 border-2 border-brand-gold rounded-r-full flex items-center shadow-[0_0_15px_rgba(212,175,55,0.4)] backdrop-blur-sm pl-12 md:pl-24 bg-gradient-to-r from-black via-black/50 to-transparent overflow-hidden">
-                <h3 className="text-sm md:text-2xl font-bold text-brand-gold mb-1 whitespace-nowrap">Day 0 - April 10, 2026</h3>
+                <h3 className="text-sm md:text-2xl font-bold text-brand-gold mb-1 whitespace-nowrap">Day 1 - April 11, 2026</h3>
 
                 {/* Internal Horizontal line - Hidden on small mobile to avoid overflow */}
                 <div className="hidden sm:flex absolute right-6 top-1/2 -translate-y-1/2 left-[250px] md:left-[300px] h-1 bg-brand-gold/80 rounded-full items-center shadow-[0_0_10px_#d4af37]">
@@ -129,9 +111,9 @@ const ScheduleSection = () => {
             {/* Empty space for the top header */}
             <div className="h-16"></div>
 
-            {/* Day 0 Items */}
+            {/* Day 1 Items */}
             <div className="flex flex-col gap-10 mt-12 w-full">
-              {scheduleDataDay0.map((item, index) => (
+              {scheduleDataDay1.map((item, index) => (
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -158,42 +140,6 @@ const ScheduleSection = () => {
 
           </div>
 
-          {/* Day 1 Separator */}
-          <div className="relative flex items-center mt-10 mb-10 pl-24 md:pl-32">
-            <div className="absolute left-[35px] md:left-[51px] w-3 h-3 rounded-full bg-brand-gold shadow-[0_0_10px_#d4af37] z-10"></div>
-
-            <div className="flex items-center gap-4 w-full">
-              <h3 className="text-xl md:text-2xl font-bold text-brand-gold shrink-0">Day 1 - April 11, 2026</h3>
-              <div className="h-px border-t-2 border-dashed border-brand-gold/50 flex-1"></div>
-            </div>
-          </div>
-
-          {/* Day 1 Items */}
-          <div className="relative flex flex-col gap-10 pl-24 md:pl-32 mb-10">
-            {scheduleDataDay1.map((item, index) => (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                key={index}
-                className="relative"
-              >
-                {/* Node for items */}
-                <div className="absolute -left-[64px] md:-left-[85px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-gradient-to-br from-yellow-200 to-brand-gold shadow-[0_0_15px_#d4af37] z-10 border border-yellow-200"></div>
-
-                <div>
-                  <h4 className="text-xl md:text-2xl font-bold mb-1">
-                    <span className="text-brand-gold mr-2">{item.time}</span>
-                    <span className="text-yellow-100">{item.title}</span>
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-300 text-base md:text-lg marker:text-gray-500 mt-2">
-                    {Array.isArray(item.description) ? item.description.map((d, i) => <li key={i}>{d}</li>) : <li>{item.description}</li>}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
 
           {/* Day 2 Separator */}
           <div className="relative flex items-center mt-10 mb-10 pl-24 md:pl-32">
